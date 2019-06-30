@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Courgette%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/main.js"></script>
+  <title>Vigenere Cipher</title>
+</head>
+<body>
+  <div class="container">
+    <p class="preTitle">JavaScript</p>
+    <h1>Chiffre de Vigenère</h1>
+    <h2>Texte à chiffrer</h2>
+    <textarea id="clear" rows="8" cols="20"></textarea>
+    <div class="shiftChoice">
+      <div class="labelWrap">
+        <label for="shift">Clef de chiffrage : </label>
+      </div>
+      <div class="inputWrap">
+        <input id="key" type="text"/>
+      </div>
+    </div>
+    <h2>Texte chiffré</h2>
+    <textarea id="encrypted" rows="8" cols="20"></textarea>
+  </div>
+</body>
+</html>

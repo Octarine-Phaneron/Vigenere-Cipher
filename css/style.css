@@ -1,0 +1,93 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  padding: 80px 0 80px 0;
+  background-image: url("../img/retina_dust-phaneron.png");
+  font-family: 'Montserrat', sans-serif;
+  color: #86785b;
+  font-size: 19px;
+}
+
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.preTitle{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Courgette', cursive;
+  margin-bottom: 27px;
+  color: #bba983;
+}
+
+h1{
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Courgette', cursive;
+  margin-bottom: 100px;
+  color: #f77c3e;
+}
+
+h2,
+textArea{
+  display: block;
+  width: 60%;
+  margin: 0 auto 20px auto;
+}
+
+h2{
+  text-align: center;
+  font-size: 25px;
+}
+
+.shiftChoice{
+  display: block;
+  width: 60%;
+  font-size: 0;
+  margin: 0 auto 40px auto;
+}
+
+.shiftChoice .labelWrap,
+.shiftChoice .inputWrap{
+  font-size: 19px;
+  display: inline-block;
+  width: 50%;
+}
+
+.shiftChoice .labelWrap{
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+input,
+textarea{
+  background-color: transparent;
+  border: 2px dashed #bba983;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.shiftChoice label{
+  display: block;
+  width: 100%;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.inputWrap input{
+  display: block;
+  width: 50%;
+  text-align: center;
+  font-size: 19px;
+}
+
+textarea{
+  padding: 10px;
+  margin-bottom: 60px;
+  font-size: 22px;
+  max-width: 60%;
+}
