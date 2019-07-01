@@ -50,7 +50,7 @@ window.onload = function(){
         keyChar = getKeyChar(j);
         char = getNewValue(char.toLowerCase(), keyChar);
         // if char was uppercase => char.toUpperCase()
-        char = (char == clearText.charAt(i).toUpperCase() ? char.toUpperCase() : char);
+        char = (clearText.charAt(i) == clearText.charAt(i).toUpperCase() ? char.toUpperCase() : char);
         j++;
       }
       // Other chars aren't encrypted
