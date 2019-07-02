@@ -23,7 +23,6 @@ window.onload = function(){
     return "";
   }
 
-
   /* Checks if the text/key have changed, if it has,
   * gets the new text and sends it to the encrypt function  */
   function check(){
@@ -36,6 +35,9 @@ window.onload = function(){
         encryptedText = encrypt(clearText);
         encryptedTextArea.value = encryptedText;
       }
+      else{
+        encryptedTextArea.value = "";
+      }
     }
   }
   /* For each letter of the clear text, checks if it's a letter.
@@ -47,8 +49,9 @@ window.onload = function(){
       char = clearText.charAt(i);
       // if char i is a letter
       if( char.match(/[A-z\\s]/)){
-        keyChar = getKeyChar(j);
-        char = getNewValue(char.toLowerCase(), keyChar);
+        keyChar = key[ j % key.length ];
+        // Chiffré[i] = (Texte[i] + Clés[i]) modulo 26
+        char = alphabet[ ( alphabet.indexOf(char.toLowerCase()) + alphabet.indexOf(keyChar) ) % alphabet.length ];
         // if char was uppercase => char.toUpperCase()
         char = (clearText.charAt(i) == clearText.charAt(i).toUpperCase() ? char.toUpperCase() : char);
         j++;
@@ -57,21 +60,6 @@ window.onload = function(){
       tempEncrypted += char;
     }
     return tempEncrypted;
-  }
-
-  function getNewValue(char, keyChar){
-    encryptedIndex = alphabet.indexOf(char) + alphabet.indexOf(keyChar);
-    while(encryptedIndex >= alphabet.length){
-      encryptedIndex = encryptedIndex - alphabet.length;
-    }
-    return alphabet[encryptedIndex];
-  }
-
-  function getKeyChar(index){
-    while(index > key.length -1){
-      index = index - key.length;
-    }
-    return key[index];
   }
 
 }
