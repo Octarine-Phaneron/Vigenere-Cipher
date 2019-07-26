@@ -7,7 +7,7 @@ window.onload = function(){
 
   // init default values
   const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  const onlyLetters = new RegExp("[A-z\s]");
+  const onlyLetters = new RegExp("^[a-zA-Z\\s]+$");
   let key = "";
   let clearText = "";
   let encryptedText = "";
