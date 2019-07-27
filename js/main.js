@@ -53,9 +53,7 @@ window.onload = function(){
       // if char i is a letter
       if( char.match(/[A-z\\s]/)){
         keyChar = key[ j % key.length ];
-
         char = encryptDecrypt(char, keyChar);
-
         // if char was uppercase => char.toUpperCase()
         char = (clearText.charAt(i) == clearText.charAt(i).toUpperCase() ? char.toUpperCase() : char);
         j++;
@@ -67,11 +65,9 @@ window.onload = function(){
   }
   // Chiffré[i] = (Texte[i] + Clés[i]) modulo 26
   function encryptDecrypt(char, keyChar){
-    console.log(encrypt.checked)
     if(encrypt.checked == true){ // encrypt
       return alphabet[ ( alphabet.indexOf(char.toLowerCase()) + alphabet.indexOf(keyChar) ) % alphabet.length ];
     }else{ // decrypt
-      console.log( (alphabet.indexOf(char.toLowerCase()) - alphabet.indexOf(keyChar) + 26 ) % alphabet.length);
       return alphabet[ ( alphabet.indexOf(char.toLowerCase()) -  alphabet.indexOf(keyChar) + 26 ) % alphabet.length ];
     }
   }
