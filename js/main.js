@@ -6,6 +6,8 @@ window.onload = function(){
   let keyInput = document.getElementById("key");
   let encrypt = document.getElementById("encrypt");
   let checkSwitch = encrypt.checked;
+  let topTitle = document.getElementById("topTextTitle");
+  let bottomTitle = document.getElementById("bottomTextTitle");
 
   // init default values
   const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -52,7 +54,7 @@ window.onload = function(){
       char = clearText.charAt(i);
       // if char i is a letter
       if( char.match(/[A-z\\s]/)){
-        keyChar = key[ j % key.length ];
+        keyChar = key[ j % key.length ].toLowerCase();
         char = encryptDecrypt(char, keyChar);
         // if char was uppercase => char.toUpperCase()
         char = (clearText.charAt(i) == clearText.charAt(i).toUpperCase() ? char.toUpperCase() : char);
@@ -71,5 +73,15 @@ window.onload = function(){
       return alphabet[ ( alphabet.indexOf(char.toLowerCase()) -  alphabet.indexOf(keyChar) + 26 ) % alphabet.length ];
     }
   }
+
+  encrypt.onclick = function(){
+    if( encrypt.checked == true ){
+      topTitle.innerText = "Texte à chiffrer";
+      bottomTitle.innerText = "Texte chiffré";
+    }else{
+      topTitle.innerText = "Texte à déchiffrer";
+      bottomTitle.innerText = "Texte déchiffré"
+    }
+  };
 
 }
